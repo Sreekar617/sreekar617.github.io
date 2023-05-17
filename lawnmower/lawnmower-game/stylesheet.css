@@ -1,0 +1,28 @@
+#lawn {
+    border: solid;
+    border-width: 3px;
+    margin: auto;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#desc {
+    position:fixed;
+    bottom:0;
+    right:10px;
+}
+
+#prestige {
+    position:fixed;
+    bottom: 0;
+}
+
+#superTicks {
+    position: fixed;
+    right:0;
+    top:0;
+}

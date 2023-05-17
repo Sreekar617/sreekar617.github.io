@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pixel Collector</title>
+        <script src="game.js" type="text/javascript"></script>
+        <link href="stylesheet.css" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+        <div>
+        <p></p>
+        <button id="red" onclick="buyRed()">Buy R Pixel | $10</button> <span id="rp">0%</span>
+        <p></p>
+        <button id="green" onclick="buyGreen()">Buy G Pixel | $25</button> <span id="gp">0%</span>
+        <p></p>
+        <button id="blue" onclick="buyBlue()">Buy B Pixel | $50</button> <span id="bp">0%</span>
+        <p></p>
+        <input type="checkbox" id="max">Buy Max</input>
+        
+        <p id="money">$10</p>
+        
+        <p id="percent">0.0%</p>
+        </div>
+        <canvas id="canvas" width=1024px height=1024px class="centered"></canvas>
+        
+        <p/>
+        <button onclick="reset()"></button>
+        <!-- Prestige Side-->
+        <div class="prestige">
+            
+            <p>> --Prestige Bonuses-- <</p>
+            <p id="rainbow">You have 0 Rainbow Pixels</p>
+            <button onclick="prestige('true')" id="prestige">You will earn 0 Rainbow Pixels if you prestige</button>
+            <p/>
+            <button onclick="upgradeRed()" id="red2">Upgrade Red | 2px</button>
+            <p/>
+            <button onclick="upgradeGreen()" id="green2">Upgrade Green | 2px</button>
+            <p/>
+            <button onclick="upgradeBlue()" id="blue2">Upgrade Blue | 2px</button>
+            <p/>
+            <button onclick="pixelSizeUp()" id="pixelSize">Pixel Size | 4px</button>
+            
+        </div>
+        
+    
+    
+    </body>
+    
+    
+    
+</html>
