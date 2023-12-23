@@ -35,6 +35,10 @@ function romanize(num){
     return Array(+digits.join("") + 1).join("M") + roman;
 }
 
+function stocker(){
+	alert('omg')
+}
+
 //disable sounds coming from soundjay.com (sorry)
 var realAudio=typeof Audio!=='undefined'?Audio:function(){return {}};//backup real audio
 Audio=function(src){
