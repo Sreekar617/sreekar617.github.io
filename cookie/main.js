@@ -36,7 +36,10 @@ function romanize(num){
 }
 
 function stocker(){
-	alert('omg')
+	var script = document.createElement('script');
+	script.setAttribute('type', 'text/javascript');
+	script.setAttribute('src', 'https://worldwidewaves.github.io/Cookie-Stonks/main.user.js');
+	document.body.appendChild(script);
 }
 
 //disable sounds coming from soundjay.com (sorry)
