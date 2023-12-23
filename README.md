@@ -1,2 +1,2 @@
 # site
-apparently unbIocked gam∊s website is more in demand than blowing up all admin enforced extensions and unblocking everything
+this is for the sole purpose of the convenience of having all games in one location. i did not make most of these games, however i did modify some of them
