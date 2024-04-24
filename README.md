@@ -1,2 +1,2 @@
-# site
-this is for the sole purpose of the convenience of having all games in one location. i did not make most of these games, however i did modify some of them
+# closed for the remainder of the 2024 school year
+thanks for all the views yall, this was genuinely fun to work on.
