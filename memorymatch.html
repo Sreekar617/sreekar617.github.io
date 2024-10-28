@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Made by Najib Bari</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+            background-color: #222;
+            color: #fff;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2em;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        #game-info {
+            display: flex;
+            justify-content: space-between;
+            width: 500px;
+            margin-bottom: 15px;
+        }
+        #game-container {
+            display: grid;
+            grid-template-columns: repeat(4, 120px);
+            grid-gap: 10px;
+            perspective: 1000px;
+        }
+        .card {
+            width: 120px;
+            height: 120px;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: rotateY(0deg);
+            transition: transform 0.6s;
+            cursor: pointer;
+        }
+        .card.is-flipped {
+            transform: rotateY(180deg);
+        }
+        .card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+        .card-front {
+            background-color: #1e1e1e;
+            color: #fff;
+        }
+        .card-back {
+            background-color: #4CAF50;
+            color: #fff;
+            transform: rotateY(180deg);
+        }
+        #result {
+            margin-top: 15px;
+            font-size: 1.5em;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #timer, #moves {
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <h1>we love jbs games</h1>
+    <div id="game-info">
+        <div id="timer">Time: 0s</div>
+        <div id="moves">Moves: 0</div>
+    </div>
+    <div id="game-container"></div>
+    <div id="result"></div>
+    <button onclick="resetGame()">Restart Game</button>
+
+    <script>
+        const symbols = ['🍎', '🍌', '🍇', '🍓', '🍒', '🍉', '🍍', '🥥', '🍎', '🍌', '🍇', '🍓', '🍒', '🍉', '🍍', '🥥'];
+        let flippedCards = [];
+        let matchedPairs = 0;
+        let moves = 0;
+        let startTime;
+        let timerInterval;
+
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function createCard(symbol) {
+            const card = document.createElement('div');
+            card.classList.add('card');
+            card.dataset.symbol = symbol;
+
+            const cardFront = document.createElement('div');
+            cardFront.classList.add('card-face', 'card-front');
+            cardFront.textContent = '?';
+
+            const cardBack = document.createElement('div');
+            cardBack.classList.add('card-face', 'card-back');
+            cardBack.textContent = symbol;
+
+            card.appendChild(cardFront);
+            card.appendChild(cardBack);
+
+            card.addEventListener('click', () => flipCard(card));
+
+            return card;
+        }
+
+        function initializeGame() {
+            const gameContainer = document.getElementById('game-container');
+            gameContainer.innerHTML = '';
+            matchedPairs = 0;
+            moves = 0;
+            flippedCards = [];
+            shuffle(symbols);
+
+            symbols.forEach(symbol => {
+                const card = createCard(symbol);
+                gameContainer.appendChild(card);
+            });
+
+            document.getElementById('result').textContent = '';
+            document.getElementById('moves').textContent = 'Moves: 0';
+            startTimer();
+        }
+
+        function flipCard(card) {
+            if (flippedCards.length >= 2 || card.classList.contains('is-flipped') || card.classList.contains('matched')) return;
+            
+            card.classList.add('is-flipped');
+            flippedCards.push(card);
+
+            if (flippedCards.length === 2) {
+                moves++;
+                document.getElementById('moves').textContent = `Moves: ${moves}`;
+                checkForMatch();
+            }
+        }
+
+        function checkForMatch() {
+            const [card1, card2] = flippedCards;
+            if (card1.dataset.symbol === card2.dataset.symbol) {
+                card1.classList.add('matched');
+                card2.classList.add('matched');
+                flippedCards = [];
+                matchedPairs++;
+
+                if (matchedPairs === symbols.length / 2) {
+                    clearInterval(timerInterval);
+                    document.getElementById('result').textContent = `Congratulations! You matched all pairs in ${moves} moves and ${getTimeElapsed()} seconds!`;
+                }
+            } else {
+                setTimeout(() => {
+                    card1.classList.remove('is-flipped');
+                    card2.classList.remove('is-flipped');
+                    flippedCards = [];
+                }, 1000);
+            }
+        }
+
+        function startTimer() {
+            startTime = new Date();
+            document.getElementById('timer').textContent = 'Time: 0s';
+            timerInterval = setInterval(() => {
+                document.getElementById('timer').textContent = `Time: ${getTimeElapsed()}s`;
+            }, 1000);
+        }
+
+        function getTimeElapsed() {
+            return Math.floor((new Date() - startTime) / 1000);
+        }
+
+        function resetGame() {
+            clearInterval(timerInterval);
+            initializeGame();
+        }
+
+        initializeGame();
+    </script>
+</body>
+</html>
