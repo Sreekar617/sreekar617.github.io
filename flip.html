@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gambling</title>
+</head>
+
+<body>
+    <h1 id="title">gambling</h1>
+    <p>Money: $<a id="money">20</a></p>
+    <input type="number" id="bet" placeholder="Enter bet in dollars">
+    <button type="button" onClick="flip()">Flip</button>
+    <h3 id="result"></h3>
+    <script>
+        var money = 20;
+        function flip() {
+            var bet = parseInt(document.getElementById("bet").value);
+            coin = Math.random();
+            // if bet is greater than money, return
+            if (bet > money || bet < 0) {
+                document.getElementById("result").innerHTML = "You don't have enough money (refresh the page)";
+                return;
+            }
+            if (coin >= 0.5) {
+                money += bet;
+                document.getElementById("result").innerHTML = "won $" + bet;
+            } else {
+                money -= bet;
+                document.getElementById("result").innerHTML = "lost $" + bet;
+            }
+
+            document.getElementById("money").innerHTML = money;
+        };
+    </script>
+</body>
+
+</html>
