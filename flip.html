@@ -19,7 +19,7 @@
             var bet = parseInt(document.getElementById("bet").value);
             coin = Math.random();
             // if bet is greater than money, return
-            if (bet > money || bet < 0) {
+            if (bet > money || bet < 0 || isNaN(bet)) {
                 document.getElementById("result").innerHTML = "You don't have enough money (refresh the page)";
                 return;
             }
