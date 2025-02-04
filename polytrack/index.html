@@ -1,0 +1,349 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Poly Track - Fast-Paced Low-Poly Driving Game</title>
+
+<link rel="icon" href="/favicon.ico">
+
+<meta name="theme-color" content="rgb(0 122 255)">
+<meta name="_foundr" content="94c850312782eb473efa53c1d9098f0f">
+<meta name="description" content="Poly Track is an exciting driving game with loops, jumps, and high-speed action. Race against the clock on tracks built by you and the Poly Track community!" />
+<meta name="keywords" content="Poly Track, Online Racing Game, Custom Tracks, Low-Poly Driving, Fast-Paced Racing, Build Your Track." />
+<meta property="og:title" content="Poly Track - Fast-Paced Low-Poly Driving Game" />
+<meta property="og:image" content="" />
+<meta property="og:description" content="Poly Track is an exciting driving game with loops, jumps, and high-speed action. Race against the clock on tracks built by you and the Poly Track community!" />
+<link rel="canonical" href="https://polytrack.info" />
+<!-- Require stylesheet load from local -->
+<!-- <link href="./dist/css/tailwind.min.css" rel="stylesheet"> -->
+<!-- <link href="./dist/css/fontawesome-all.min.css" rel="stylesheet"> -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BBMX099H8G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BBMX099H8G');
+</script>
+<!-- Required stylesheets -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=66552af92b0bca00199fbefb&product=inline-share-buttons&source=platform" async="async"></script>
+<style>
+    .dropdown-menu {
+        display: none;
+        opacity: 0;
+        transform: scale(0.9);
+        transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
+    }
+    .dropdown-menu.show {
+        display: block;
+        opacity: 1;
+        transform: scale(1);
+    }
+    #hamburger {
+        z-index: 10000;
+    }
+    @media (max-width: 1023px) {
+        #navbar {
+            position: fixed;
+            left: 100%;
+            z-index: 9999;
+            transition: left 0.3s ease-in-out;
+        }
+    }
+</style>
+<script>
+    $(document).ready(function() {
+        $('#dropdownButton').click(function(event) {
+            event.stopPropagation();
+            $('#dropdownMenu').toggleClass('show');
+        });
+
+        $(document).click(function(event) {
+            if (!$(event.target).closest('#dropdownButton').length) {
+                $('#dropdownMenu').removeClass('show');
+            }
+        });
+        document.getElementById('hamburger').addEventListener('click', function() {
+            var navbar = document.getElementById('navbar');
+            if (navbar.style.left === '0%') {
+                navbar.style.left = '100%';
+            } else {
+                navbar.style.left = '0%';
+            }
+        });
+    });
+</script></head>
+<body>
+<div class="ezy__nav2 light py-3 bg-white dark:bg-[#0b1727] text-zinc-900 dark:text-white relative">
+    <nav>
+        <div class="container px-4">
+            <div class="flex justify-between items-center">
+            <h1 class="flex items-center">
+                <img src="https://src.polytrack.info/polytrack_logo.png" alt="Polytrack Logo" class="mr-2 h-12"> 
+                <a class="font-black text-3xl" href="/">Poly Track</a>
+            </h1>
+                <button class="block lg:hidden cursor-pointer h-10 z-20" type="button" id="hamburger">
+                    <div class="h-0.5 w-7 bg-black dark:bg-white -translate-y-2"></div>
+                    <div class="h-0.5 w-7 bg-black dark:bg-white"></div>
+                    <div class="h-0.5 w-7 bg-black dark:bg-white translate-y-2"></div>
+                </button>
+                <ul class="flex flex-col lg:flex-row justify-center items-center text-3xl gap-6 lg:text-base lg:gap-2 absolute h-screen w-screen top-0 left-full lg:left-0 lg:relative lg:h-auto lg:w-auto bg-white dark:bg-[#0b1727] lg:bg-transparent" id="navbar">
+                    <li class="">
+                        <a class="px-4 opacity-100" href="/">Home</a>
+                    </li>
+                    <li class="">
+                        <a class="px-4 opacity-50 hover:opacity-100 " href="/#how-it-works">How It Works</a>
+                    </li>
+                    <li class="">
+                        <a class="px-4 opacity-50 hover:opacity-100" href="/#faq">FAQ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<section
+  class="ezy__header29 light py-10 md:py-16 text-white bg-cover bg-center bg-no-repeat relative"
+  style="background-image: url(https://cdn.easyfrontend.com/pictures/hero/hero_30.png)"
+>
+  <div class="container px-4 mx-auto">
+    <div class="md:max-w-5xl mx-auto flex justify-center items-center text-center">
+    <div class="w-full">
+        <iframe src="https://thepizzaedition.github.io/assets/allgames/polytrack41/index.html" 
+                class="w-full border border-gray-300 rounded" 
+                style="height: 600px;"
+                frameborder="0" 
+                allowfullscreen>
+        </iframe>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section id="how-it-works" class="ezy__featured14 light py-14 md:py-14 bg-white dark:bg-[#0b1727] text-zinc-900 dark:text-white">
+  <div class="container px-16 md:px-8 lg:px-28">
+    <div class="grid grid-cols-12 justify-center md:mb-6">
+      <div class="col-span-12 lg:col-span-8 lg:col-start-3 xl:px-12 text-center">
+        <h2 class="font-bold text-[25px] md:text-[45px] leading-none mb-4">How to Play Poly Track</h2>
+        <p class="">
+        Follow these steps to design and race in Poly Track!
+        </p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-12">
+            <div class="col-span-12 md:col-span-6 lg:col-span-4 mt-6">
+        <div class="ezy__featured14-item flex">
+          <div
+            class="w-12 h-12 min-h-[50px] min-w-[50px] bg-white dark:bg-[#1E2735] text-blue-600 rounded-full text-[28px] inline-flex justify-center items-center shadow-xl mb-6"
+          >
+            1
+          </div>
+          <div class="ml-4">
+            <h3 class="text-2xl font-bold mb-4">Design Your Track</h3>
+            <p class="opacity-60">
+            Use the game’s design tools to create your custom track or choose from pre-made tracks with various obstacles and ramps.
+            </p>
+          </div>
+        </div>
+      </div>
+            <div class="col-span-12 md:col-span-6 lg:col-span-4 mt-6">
+        <div class="ezy__featured14-item flex">
+          <div
+            class="w-12 h-12 min-h-[50px] min-w-[50px] bg-white dark:bg-[#1E2735] text-blue-600 rounded-full text-[28px] inline-flex justify-center items-center shadow-xl mb-6"
+          >
+            2
+          </div>
+          <div class="ml-4">
+            <h3 class="text-2xl font-bold mb-4">Customize Your Car</h3>
+            <p class="opacity-60">
+            Choose and customize a car that suits your racing style.
+            </p>
+          </div>
+        </div>
+      </div>
+            <div class="col-span-12 md:col-span-6 lg:col-span-4 mt-6">
+        <div class="ezy__featured14-item flex">
+          <div
+            class="w-12 h-12 min-h-[50px] min-w-[50px] bg-white dark:bg-[#1E2735] text-blue-600 rounded-full text-[28px] inline-flex justify-center items-center shadow-xl mb-6"
+          >
+            3
+          </div>
+          <div class="ml-4">
+            <h3 class="text-2xl font-bold mb-4">Race Against the Clock</h3>
+            <p class="opacity-60">
+            Test your skills by racing against the clock, aiming to improve your time on your custom tracks.
+            </p>
+          </div>
+        </div>
+      </div>
+            <div class="col-span-12 md:col-span-6 lg:col-span-4 mt-6">
+        <div class="ezy__featured14-item flex">
+          <div
+            class="w-12 h-12 min-h-[50px] min-w-[50px] bg-white dark:bg-[#1E2735] text-blue-600 rounded-full text-[28px] inline-flex justify-center items-center shadow-xl mb-6"
+          >
+            4
+          </div>
+          <div class="ml-4">
+            <h3 class="text-2xl font-bold mb-4">Share and Collaborate</h3>
+            <p class="opacity-60">
+            Join the Poly Track community to share your track designs and get tips from other players.
+            </p>
+          </div>
+        </div>
+      </div>
+            <div class="col-span-12 md:col-span-6 lg:col-span-4 mt-6">
+        <div class="ezy__featured14-item flex">
+          <div
+            class="w-12 h-12 min-h-[50px] min-w-[50px] bg-white dark:bg-[#1E2735] text-blue-600 rounded-full text-[28px] inline-flex justify-center items-center shadow-xl mb-6"
+          >
+            5
+          </div>
+          <div class="ml-4">
+            <h3 class="text-2xl font-bold mb-4">Challenge Yourself</h3>
+            <p class="opacity-60">
+            Create complex tracks with jumps and curves to challenge yourself and improve your racing techniques.
+            </p>
+          </div>
+        </div>
+      </div>
+            <div class="col-span-12 md:col-span-6 lg:col-span-4 mt-6">
+        <div class="ezy__featured14-item flex">
+          <div
+            class="w-12 h-12 min-h-[50px] min-w-[50px] bg-white dark:bg-[#1E2735] text-blue-600 rounded-full text-[28px] inline-flex justify-center items-center shadow-xl mb-6"
+          >
+            6
+          </div>
+          <div class="ml-4">
+            <h3 class="text-2xl font-bold mb-4">Compete in Events</h3>
+            <p class="opacity-60">
+            Participate in community events and challenges to showcase your skills and win rewards.
+            </p>
+          </div>
+        </div>
+      </div>
+          </div>
+  </div>
+</section>
+
+<section id="faq" class="ezy__faq5 light py-14 md:py-14 bg-white dark:bg-[#0b1727] text-zinc-900 dark:text-white">
+  <div class="container px-16 md:px-8 lg:px-28">
+    <div class="grid grid-cols-12 justify-center md:mb-6">
+      <div class="col-span-12 lg:col-span-8 lg:col-start-3 xl:px-12 text-center">
+        <h2 class="font-bold text-[25px] md:text-[45px] leading-none mb-4">Frequently Asked Questions</h2>
+        <p class="">
+        Common Questions About Poly Track Gameplay
+        </p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-12 gap-0 md:gap-6">
+      <div class="col-span-12 md:col-span-12">
+                <div class="bg-gray-100 dark:bg-[#1E2735] mt-6 rounded-xl">
+          <h3 class="p-4 lg:p-6 lg:pb-5 w-full text-start flex justify-between items-center font-medium text-xl">
+            <span>How to play Poly Track?</span>
+          </h3>
+          <div class="ezy__faq5-content px-4 lg:px-6 lg:pb-6">
+            <p class="opacity-50 mb-0">
+            In Poly Track, you race a car you customize on a track you design yourself, focusing on beating your own records and mastering track building for speed and precision.
+            </p>
+          </div>
+        </div>
+                <div class="bg-gray-100 dark:bg-[#1E2735] mt-6 rounded-xl">
+          <h3 class="p-4 lg:p-6 lg:pb-5 w-full text-start flex justify-between items-center font-medium text-xl">
+            <span>Can I share my track designs with other Poly Track players?</span>
+          </h3>
+          <div class="ezy__faq5-content px-4 lg:px-6 lg:pb-6">
+            <p class="opacity-50 mb-0">
+            Yes! Poly Track has a vibrant online community where you can share design codes and tips with other players.
+            </p>
+          </div>
+        </div>
+                <div class="bg-gray-100 dark:bg-[#1E2735] mt-6 rounded-xl">
+          <h3 class="p-4 lg:p-6 lg:pb-5 w-full text-start flex justify-between items-center font-medium text-xl">
+            <span>What platforms can I play Poly Track on?</span>
+          </h3>
+          <div class="ezy__faq5-content px-4 lg:px-6 lg:pb-6">
+            <p class="opacity-50 mb-0">
+            Poly Track is available on web browsers for both desktop and mobile devices.
+            </p>
+          </div>
+        </div>
+                <div class="bg-gray-100 dark:bg-[#1E2735] mt-6 rounded-xl">
+          <h3 class="p-4 lg:p-6 lg:pb-5 w-full text-start flex justify-between items-center font-medium text-xl">
+            <span>Are there premade tracks to practice on?</span>
+          </h3>
+          <div class="ezy__faq5-content px-4 lg:px-6 lg:pb-6">
+            <p class="opacity-50 mb-0">
+            Yes, there are several premade tracks available for practice and to get a feel for different designs.
+            </p>
+          </div>
+        </div>
+                <div class="bg-gray-100 dark:bg-[#1E2735] mt-6 rounded-xl">
+          <h3 class="p-4 lg:p-6 lg:pb-5 w-full text-start flex justify-between items-center font-medium text-xl">
+            <span>When was Poly Track released?</span>
+          </h3>
+          <div class="ezy__faq5-content px-4 lg:px-6 lg:pb-6">
+            <p class="opacity-50 mb-0">
+            Poly Track was released in March 2023.
+            </p>
+          </div>
+        </div>
+              </div>
+    </div>
+  </div>
+</section>
+<section class="ezy__copyright6 light bg-white dark:bg-[#0b1727] text-zinc-900 dark:text-white">
+  <div class="text-center lg:text-start py-10">
+    <div class="container px-16 md:px-8 lg:px-28">
+      <div class="grid grid-cols-12 justify-between items-center">
+        <div class="col-span-12 lg:col-span-4">
+          <p class="mb-2 lg:mb-0">Copyright © All rights reserved</p>
+        </div>
+        <div class="col-span-12 lg:col-span-4">
+          <ul class="flex justify-center">
+            <li class="my-2 mx-4">
+              <a class="hover:opacity-80" href="/">Home</a>
+            </li>
+            <li class="my-2 mx-4">
+              <a class="hover:opacity-80" href="/#how-it-works">How It Works</a>
+            </li>
+            <li class="my-2 mx-4">
+              <a class="hover:opacity-80" href="/#faq">FAQ</a>
+            </li>
+            <li class="my-2 mx-4">
+            <a href="https://bai.tools" target="_blank">BAI.tools</a>
+            </li>
+            <li class="my-2 mx-4"></li>
+            <a href="https://tap4.ai/ai/flux-ai-io" target="_blank" title="Flux Image AI">Flux Image AI</a>
+            </li>
+            <li class="my-2 mx-4"></li>
+            <a href="https://fluxai.pro/" title="Flux AI Pro">Flux AI Pro</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-span-12 lg:col-span-4 flex justify-center lg:justify-end">
+        <div class="sharethis-inline-share-buttons"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+        theme: {
+            container: {
+                center: true,
+            }
+        }
+    }
+</script></body>
+</html>
