@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>review game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- <h3>Coming soon (in order of soon to later):</h3>
+    <ul>
+        <li>Modes for Chinese 2-4</li>
+        <li>Timed mode</li>
+        <li>Leaderboard</li>
+        <li>Modes for more languages</li>
+        <li>Modes for other non-language classes</li>
+    </ul> -->
+    <div id="game">
+        <p id="char">家</p>
+        <div id="text-container">
+            <input type="text" id="input" placeholder="enter pinyin">
+            <button type="button" id="submit" onclick="buttonSubmit()">submit</button>
+        </div>
+        <select name="set" id="set" onchange="chooseSet()">
+            <option value="bruh">Select set:</option>
+            <option value="L1">Level 1 characters</option>
+            <option value="L2">Level 3 characters</option>
+            <option value="T50">Top 50 characters</option>
+        </select>
+        <input type="checkbox" id="missed"> Practice
+    </div>
+    <div id="blob"></div>
+    <div id="blur"></div>
+    <script src="script.js"></script>
+</body>
+
+</html>

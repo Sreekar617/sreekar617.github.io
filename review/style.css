@@ -1,0 +1,114 @@
+#char {
+    font-size: 120px;
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+}
+
+#game {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1;
+}
+
+body {
+    background-color: rgb(var(--background-rgb));
+    display: grid;
+    place-items: center;
+    color: white;
+    font-family: 'Rubik', sans-serif;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    margin: 0
+}
+
+#text-container {
+    position: relative;
+    width: 100%;
+}
+
+#input {
+    height: 36px;
+    border-radius: 48px;
+    padding-left: 12px;
+    font-size: 14px;
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+#submit {
+    background-color: #a594fd;
+    border: none;
+    color: white;
+    padding: 9px 12px;
+    border-radius: 200px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translateY(-50%);
+    z-index: 3;
+}
+
+/* background stuff */
+
+@keyframes rotate {
+    0% {
+        rotate: 0deg
+    }
+
+    50% {
+        scale: 1 1.5
+    }
+
+    to {
+        rotate: 360deg
+    }
+}
+
+:root {
+    --background-rgb: 29 30 34;
+    --blue-rgb: 80 71 65;
+    --primary-rgb: var(--blue-rgb);
+    --blob-color-1: rgb(var(--blue-rgb));
+    --blob-color-2: dodgerblue
+}
+
+* {
+    box-sizing: border-box
+}
+
+#blob,
+#blur {
+    position: absolute
+}
+
+#blob {
+    background-color: #fff;
+    height: 34vmax;
+    aspect-ratio: 1;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    border-radius: 50%;
+    background: linear-gradient(to right, var(--blob-color-1), var(--blob-color-2));
+    animation: rotate 20s infinite;
+    opacity: .5;
+    /* z-index: -3; */
+}
+
+#blur {
+    height: 100vh;
+    width: 100vw;
+    backdrop-filter: blur(12vmax);
+    /* z-index: -2; */
+}
