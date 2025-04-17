@@ -16,17 +16,19 @@ files_failed = 0
 for fn in files:
     try:
         if fn.endswith(".html"):
-            print(fn)
             with open(fn, "r") as f:
                 text = f.read()
             indicator_idx = text.find(indicator_string_start)
             if indicator_idx != -1:
-                print("  im skippin")
+                # print("  im skippin")
+                continue
+            print(fn)
             text += indicator_string_start + "\n"
             text += stuff2add
             text += indicator_string_end + "\n"
             with open(fn, "w") as f:
                 f.write(text)
+            print("im changing it!")
             files_changed += 1
     except:
         print(f"womp womp: {fn}")
