@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>https://google.com/</title>
+<style>
+  html, body {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* thanks chatgpt for generating this whole page */
+    text-align: center;
+  }
+  .disclaimer {
+    color: red;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+</style>
+</head>
+<body>
+
+<div>
+  <div class="disclaimer"><strong>
+    DISCLAIMER: The following document is the offical comp-order for detention in custody (the document all the news sources got their info from). This document contains highly graphic material (tb: sexual acts with minors, mentions of substance abuse). If you don't 
+    wish to view such content, please close this page now.<br><br></strong>
+  </div>
+
+  <input type="text" id="affirm" placeholder="Type 'i understand'">
+  <button id="confirmBtn">Confirm</button>
+
+  <div id="linkContainer" style="margin-top:1rem; display:none;">
+    <a id="fileLink" href="https://ts.isnot.games/bennett_files.pdf" target="_blank">yoo hoo over here</a>
+  </div>
+
+  <div id="denied" style="margin-top:1rem; color:red; display:none;">
+    man you aint read all that try again bruh
+  </div>
+</div>
+
+<script>
+(function(){
+  const REQUIRED_TEXT = "i understand";
+  const WAIT_SECONDS = 30;
+  const startTime = Date.now();
+
+  const confirmBtn = document.getElementById('confirmBtn');
+  const affirmInput = document.getElementById('affirm');
+  const linkContainer = document.getElementById('linkContainer');
+  const deniedBox = document.getElementById('denied');
+  const dalink = document.getElementById('fileLink');
+
+  function tryReveal(){
+    const text = (affirmInput.value || "").trim().toLowerCase();
+    const elapsed = Math.floor((Date.now() - startTime)/1000);
+    console.log(elapsed);
+
+    if(text !== REQUIRED_TEXT || elapsed < WAIT_SECONDS){
+      deniedBox.style.display = "block";
+      confirmBtn.disabled = true;
+      affirmInput.disabled = true;
+      return;
+    }
+
+    // Success: show the link
+    linkContainer.style.display = "block";
+    confirmBtn.disabled = true;
+    affirmInput.disabled = true;
+  }
+
+  confirmBtn.addEventListener('click', tryReveal);
+  affirmInput.addEventListener('keydown', function(e){
+    if(e.key === 'Enter') tryReveal();
+  });
+  dalink.addEventListener('click', function(){
+    alert("genuinely like leave. smh bro really thought");
+  });
+})();
+</script>
+
+</body>
+</html>
